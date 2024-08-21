@@ -90,9 +90,7 @@ class Patreon2Kindle():
         smtp.ehlo()
         smtp.login(username, password)
 
-        #smtp.send_message(msg, from_addr=from_addr, to_addrs=[to_addr])
-        smtp.send_message(msg, from_addr=from_addr, to_addrs=["michael_rabe_GRts9W@kindle.com",
-                                                              "michael_rabe@hotmail.de"])
+        smtp.send_message(msg, from_addr=from_addr, to_addrs=[to_addr])
 
         print(f"{title} sent.\n")
     def run(self):
