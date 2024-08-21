@@ -32,7 +32,7 @@ class Patreon2Kindle():
         imap.login(self.conf["EMAIL"]["username"], self.conf["EMAIL"]["password"])
         imap.select()
         
-        typ, msg_ids = imap.search(None, f'(FROM "bingo@patreon.com" SUBJECT "{author}")')
+        typ, msg_ids = imap.search(None, f'(FROM "{author} (via Patreon)")')
         all_ids = [int(x) for x in msg_ids[0].decode().split()]
         old_ids = self.get_old_ids(author)
         if old_ids is None:
